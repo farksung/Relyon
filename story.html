@@ -146,8 +146,12 @@
   table.stat-table th:first-child, table.stat-table td:first-child{ text-align:left; padding-left:18px; }
   table.stat-table td{ text-align:center; padding:9px 10px; border-bottom:1px solid var(--line); }
   table.stat-table tr:nth-child(odd){ background:rgba(217,164,65,0.05); }
-  table.stat-table tr.top3 td:first-child{ font-weight:700; color:var(--pitch-950); }
   .table-footnote{ font-size:12px; color:#7C887F; margin-top:12px; }
+  table.stat-table th.sortable{ cursor:pointer; user-select:none; position:relative; }
+  table.stat-table th.sortable:hover{ color:var(--pitch-950); background:#EAE7D8; }
+  table.stat-table th.sortable::after{ content:'↕'; margin-left:5px; opacity:0.35; font-size:11px; }
+  table.stat-table th.sortable.sort-asc::after{ content:'▲'; opacity:1; color:var(--gold-dim); }
+  table.stat-table th.sortable.sort-desc::after{ content:'▼'; opacity:1; color:var(--gold-dim); }
 
   @media (max-width:900px){
     .news-grid{ grid-template-columns:1fr 1fr; }
@@ -216,11 +220,11 @@
       <h3 style="margin-bottom:18px;">2024시즌 전체 기록 <span style="font-weight:400;font-size:13px;color:#7C887F;">(공격포인트순)</span></h3>
       <div class="stat-table-wrap">
       <table class="stat-table">
-        <thead><tr><th>이름</th><th>출석</th><th>골</th><th>어시</th><th>공격P</th><th>xP</th><th>pP</th><th>NPP</th></tr></thead>
+        <thead><tr><th class="sortable">이름</th><th class="sortable">출석</th><th class="sortable">골</th><th class="sortable">어시</th><th class="sortable">공격P</th><th class="sortable">xP</th><th class="sortable">pP</th><th class="sortable">NPP</th></tr></thead>
         <tbody>
-<tr class="top3"><td>조원익</td><td>37</td><td>91</td><td>81</td><td>172</td><td>4.28</td><td>4.65</td><td>4.48</td></tr>
-<tr class="top3"><td>강상훈</td><td>40</td><td>91</td><td>41</td><td>132</td><td>3.11</td><td>3.3</td><td>3.18</td></tr>
-<tr class="top3"><td>우종근</td><td>33</td><td>66</td><td>49</td><td>115</td><td>2.71</td><td>3.48</td><td>3.36</td></tr>
+<tr><td>조원익</td><td>37</td><td>91</td><td>81</td><td>172</td><td>4.28</td><td>4.65</td><td>4.48</td></tr>
+<tr><td>강상훈</td><td>40</td><td>91</td><td>41</td><td>132</td><td>3.11</td><td>3.3</td><td>3.18</td></tr>
+<tr><td>우종근</td><td>33</td><td>66</td><td>49</td><td>115</td><td>2.71</td><td>3.48</td><td>3.36</td></tr>
 <tr><td>김영후</td><td>41</td><td>45</td><td>66</td><td>111</td><td>2.27</td><td>2.71</td><td>2.61</td></tr>
 <tr><td>이돈영</td><td>31</td><td>70</td><td>34</td><td>104</td><td>3</td><td>3.35</td><td>3.23</td></tr>
 <tr><td>박성현</td><td>39</td><td>30</td><td>57</td><td>87</td><td>2.33</td><td>2.23</td><td>2.15</td></tr>
@@ -263,11 +267,11 @@
       <h3 style="margin-bottom:18px;">2023시즌 전체 기록 <span style="font-weight:400;font-size:13px;color:#7C887F;">(공격포인트순)</span></h3>
       <div class="stat-table-wrap">
       <table class="stat-table">
-        <thead><tr><th>이름</th><th>출석</th><th>골</th><th>어시</th><th>공격P</th><th>xP</th><th>pP</th><th>NPP</th><th>승</th><th>무</th><th>패</th><th>승률</th></tr></thead>
+        <thead><tr><th class="sortable">이름</th><th class="sortable">출석</th><th class="sortable">골</th><th class="sortable">어시</th><th class="sortable">공격P</th><th class="sortable">xP</th><th class="sortable">pP</th><th class="sortable">NPP</th><th class="sortable">승</th><th class="sortable">무</th><th class="sortable">패</th><th class="sortable">승률</th></tr></thead>
         <tbody>
-<tr class="top3"><td>유지민</td><td>38</td><td>139</td><td>79</td><td>218</td><td>3.2</td><td>5.74</td><td>5.25</td><td>20</td><td>10</td><td>8</td><td>71.4%</td></tr>
-<tr class="top3"><td>조원익</td><td>40</td><td>76</td><td>95</td><td>171</td><td>4.22</td><td>4.28</td><td>3.91</td><td>29</td><td>4</td><td>7</td><td>80.6%</td></tr>
-<tr class="top3"><td>강상훈</td><td>45</td><td>100</td><td>40</td><td>140</td><td>2.15</td><td>3.11</td><td>2.85</td><td>21</td><td>6</td><td>18</td><td>53.8%</td></tr>
+<tr><td>유지민</td><td>38</td><td>139</td><td>79</td><td>218</td><td>3.2</td><td>5.74</td><td>5.25</td><td>20</td><td>10</td><td>8</td><td>71.4%</td></tr>
+<tr><td>조원익</td><td>40</td><td>76</td><td>95</td><td>171</td><td>4.22</td><td>4.28</td><td>3.91</td><td>29</td><td>4</td><td>7</td><td>80.6%</td></tr>
+<tr><td>강상훈</td><td>45</td><td>100</td><td>40</td><td>140</td><td>2.15</td><td>3.11</td><td>2.85</td><td>21</td><td>6</td><td>18</td><td>53.8%</td></tr>
 <tr><td>이돈영</td><td>36</td><td>78</td><td>30</td><td>108</td><td>1.89</td><td>3</td><td>2.74</td><td>15</td><td>7</td><td>14</td><td>51.7%</td></tr>
 <tr><td>김영후</td><td>44</td><td>44</td><td>56</td><td>100</td><td>-</td><td>2.27</td><td>2.08</td><td>18</td><td>8</td><td>18</td><td>50.0%</td></tr>
 <tr><td>박성현</td><td>42</td><td>27</td><td>71</td><td>98</td><td>1.25</td><td>2.33</td><td>2.13</td><td>19</td><td>7</td><td>16</td><td>54.3%</td></tr>
@@ -321,11 +325,11 @@
       <h3 style="margin-bottom:18px;">2022시즌 전체 기록 <span style="font-weight:400;font-size:13px;color:#7C887F;">(공격포인트순)</span></h3>
       <div class="stat-table-wrap">
       <table class="stat-table">
-        <thead><tr><th>이름</th><th>출석</th><th>골</th><th>어시</th><th>공격P</th><th>xP</th></tr></thead>
+        <thead><tr><th class="sortable">이름</th><th class="sortable">출석</th><th class="sortable">골</th><th class="sortable">어시</th><th class="sortable">공격P</th><th class="sortable">xP</th></tr></thead>
         <tbody>
-<tr class="top3"><td>조원익</td><td>23</td><td>55</td><td>42</td><td>97</td><td>4.22</td></tr>
-<tr class="top3"><td>강충현</td><td>22</td><td>52</td><td>10</td><td>62</td><td>2.82</td></tr>
-<tr class="top3"><td>권오현</td><td>17</td><td>30</td><td>20</td><td>50</td><td>2.94</td></tr>
+<tr><td>조원익</td><td>23</td><td>55</td><td>42</td><td>97</td><td>4.22</td></tr>
+<tr><td>강충현</td><td>22</td><td>52</td><td>10</td><td>62</td><td>2.82</td></tr>
+<tr><td>권오현</td><td>17</td><td>30</td><td>20</td><td>50</td><td>2.94</td></tr>
 <tr><td>강상훈</td><td>20</td><td>27</td><td>16</td><td>43</td><td>2.15</td></tr>
 <tr><td>우종근</td><td>13</td><td>25</td><td>17</td><td>42</td><td>3.23</td></tr>
 <tr><td>김민영</td><td>14</td><td>25</td><td>16</td><td>41</td><td>2.93</td></tr>
@@ -370,6 +374,35 @@ document.querySelectorAll('.year-tab').forEach(btn => {
     document.querySelectorAll('.year-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('panel-' + btn.dataset.year).classList.add('active');
+  });
+});
+
+document.querySelectorAll('table.stat-table').forEach(table => {
+  const thead = table.querySelector('thead');
+  const tbody = table.querySelector('tbody');
+  const ths = Array.from(thead.querySelectorAll('th'));
+  ths.forEach((th, idx) => {
+    th.addEventListener('click', () => {
+      const nextDir = th.classList.contains('sort-asc') ? 'desc' : 'asc';
+      ths.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+      th.classList.add(nextDir === 'asc' ? 'sort-asc' : 'sort-desc');
+
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((a, b) => {
+        const av = a.children[idx].textContent.trim();
+        const bv = b.children[idx].textContent.trim();
+        const an = parseFloat(av.replace('%',''));
+        const bn = parseFloat(bv.replace('%',''));
+        let cmp;
+        if (!isNaN(an) && !isNaN(bn) && av !== '-' && bv !== '-') {
+          cmp = an - bn;
+        } else {
+          cmp = av.localeCompare(bv, 'ko');
+        }
+        return nextDir === 'asc' ? cmp : -cmp;
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    });
   });
 });
 </script>
