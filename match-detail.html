@@ -69,6 +69,8 @@
   .news-body h3{ font-size:18px; line-height:1.3; }
   .news-card.feature h3{ font-size:23px; }
   .news-body p{ font-size:14px; color:#4B5A50; }
+  .news-grid-single{ display:block; max-width:560px; margin:0 auto; }
+  .news-grid-single .news-card.feature{ grid-row:auto; }
 
   .dark-section{ background:var(--pitch-950); color:var(--chalk); }
   .dark-section .section-head p{ color:#B9C4BB; }
@@ -226,7 +228,7 @@
     <button class="nav-toggle" onclick="document.getElementById('mainnav').classList.toggle('open')">☰</button>
     <nav id="mainnav">
       <ul>
-        <li><a href="index.html#news">News</a></li>
+        <li><a href="news.html">News</a></li>
         <li><a href="members.html">Members</a></li>
         <li><a href="matches.html" class="active">Match Video</a></li>
         <li><a href="tactics.html">Tactics</a></li>
@@ -276,7 +278,7 @@
             <thead><tr><th>이름</th><th>골</th><th>어시</th></tr></thead>
             <tbody id="leaderboard-body"></tbody>
           </table>
-          <p class="board-note">용병(게스트) 기록은 팀 공식 누적 집계에는 포함되지 않습니다.</p>
+          <p class="board-note">기울임체로 표시된 선수는 정식 팀 로스터 외 참여 인원(게스트)입니다.</p>
         </div>
       </div>
     </div>
@@ -291,13 +293,13 @@
 </footer>
 
 <script>
-const MATCHES = [{"id": "2026-09-04", "title": "풀링 FC 9월 1주차 경기", "match_date": "2026.09.04", "upload_date": "2026.09.05", "video_id": "7jr1oRjzn8M", "teamA_name": "A팀", "teamB_name": "B팀", "teamA_roster": ["돈영", "인유", "민기", "중혁", "우진", "명빈", "준서"], "teamB_roster": ["효종", "원익", "상훈", "재철", "종근", "민솔", "용병"], "record": {"wins": 3, "draws": 2, "losses": 2, "winner": "A"}, "goals": [{"ts": "02:42", "sec": 162, "scorer": "원익", "assist": null}, {"ts": "07:24", "sec": 444, "scorer": "우진", "assist": "중혁"}, {"ts": "11:03", "sec": 663, "scorer": "상훈", "assist": "원익"}, {"ts": "14:46", "sec": 886, "scorer": "준서", "assist": "인유"}, {"ts": "18:31", "sec": 1111, "scorer": "종근", "assist": "상훈"}, {"ts": "19:03", "sec": 1143, "scorer": "중혁", "assist": "돈영"}, {"ts": "28:29", "sec": 1709, "scorer": "우진", "assist": "민기"}, {"ts": "35:01", "sec": 2101, "scorer": "인유", "assist": "민기"}, {"ts": "38:46", "sec": 2326, "scorer": "원익", "assist": null}, {"ts": "41:52", "sec": 2512, "scorer": "준서", "assist": "우진"}, {"ts": "42:36", "sec": 2556, "scorer": "재철", "assist": "효종"}, {"ts": "50:08", "sec": 3008, "scorer": "종근", "assist": null}, {"ts": "54:13", "sec": 3253, "scorer": "종근", "assist": "재철"}, {"ts": "55:51", "sec": 3351, "scorer": "중혁", "assist": null}, {"ts": "58:51", "sec": 3531, "scorer": "효종", "assist": "용병"}, {"ts": "59:21", "sec": 3561, "scorer": "중혁", "assist": "돈영"}, {"ts": "1:01:23", "sec": 3683, "scorer": "돈영", "assist": null}, {"ts": "1:02:05", "sec": 3725, "scorer": "중혁", "assist": null}, {"ts": "1:02:48", "sec": 3768, "scorer": "용병", "assist": null}, {"ts": "1:04:54", "sec": 3894, "scorer": "인유", "assist": null}, {"ts": "1:07:38", "sec": 4058, "scorer": "원익", "assist": "재철"}, {"ts": "1:09:42", "sec": 4182, "scorer": "원익", "assist": null}, {"ts": "1:12:54", "sec": 4374, "scorer": "준서", "assist": "중혁"}, {"ts": "1:16:11", "sec": 4571, "scorer": "원익", "assist": "상훈"}, {"ts": "1:18:37", "sec": 4717, "scorer": "돈영", "assist": "명빈"}, {"ts": "1:28:18", "sec": 5298, "scorer": "명빈", "assist": null}, {"ts": "1:31:18", "sec": 5478, "scorer": "효종", "assist": "종근"}, {"ts": "1:34:00", "sec": 5640, "scorer": "우진", "assist": "돈영"}, {"ts": "1:35:14", "sec": 5714, "scorer": "종근", "assist": null}, {"ts": "1:35:58", "sec": 5758, "scorer": "원익", "assist": "종근"}, {"ts": "1:39:26", "sec": 5966, "scorer": "원익", "assist": null}, {"ts": "1:44:15", "sec": 6255, "scorer": "효종", "assist": "상훈"}, {"ts": "1:47:07", "sec": 6427, "scorer": "재철", "assist": "상훈"}, {"ts": "1:47:59", "sec": 6479, "scorer": "상훈", "assist": null}], "leaderboard": [{"name": "원익", "goals": 7, "assists": 1}, {"name": "중혁", "goals": 4, "assists": 2}, {"name": "종근", "goals": 4, "assists": 2}, {"name": "우진", "goals": 3, "assists": 1}, {"name": "효종", "goals": 3, "assists": 1}, {"name": "준서", "goals": 3, "assists": 0}, {"name": "상훈", "goals": 2, "assists": 4}, {"name": "돈영", "goals": 2, "assists": 3}, {"name": "재철", "goals": 2, "assists": 2}, {"name": "인유", "goals": 2, "assists": 1}, {"name": "명빈", "goals": 1, "assists": 1}, {"name": "민기", "goals": 0, "assists": 2}, {"name": "민솔", "goals": 0, "assists": 0}, {"name": "용병 (게스트)", "goals": 1, "assists": 1, "guest": true}], "total_goals": 34}];
+const MATCHES = [{"id": "2026-09-11", "title": "풀링 FC 9월 2주차 경기", "match_date": "2026.09.11", "upload_date": "2026.09.11", "video_id": "U-xmGdFNPm8", "teamA_name": "A팀", "teamB_name": "B팀", "teamA_roster": ["진성", "성현", "영후", "원익", "용병"], "teamB_roster": ["효종", "재철", "민기", "중혁", "종근"], "record": {"wins": 3, "draws": 2, "losses": 2, "winner": "B"}, "goals": [{"ts": "01:45", "sec": 105, "scorer": "원익", "assist": "진성"}, {"ts": "02:56", "sec": 176, "scorer": "효종", "assist": "재철"}, {"ts": "08:27", "sec": 507, "scorer": "영후", "assist": "용병"}, {"ts": "12:34", "sec": 754, "scorer": "중혁", "assist": "종근"}, {"ts": "17:00", "sec": 1020, "scorer": "진성", "assist": "성현"}, {"ts": "19:45", "sec": 1185, "scorer": "민기", "assist": "중혁"}, {"ts": "24:16", "sec": 1456, "scorer": "용병", "assist": "진성"}, {"ts": "32:04", "sec": 1924, "scorer": "민기", "assist": null}, {"ts": "36:48", "sec": 2208, "scorer": "종근", "assist": "민기"}, {"ts": "38:22", "sec": 2302, "scorer": "종근", "assist": null}, {"ts": "38:59", "sec": 2339, "scorer": "중혁", "assist": "상훈"}, {"ts": "49:41", "sec": 2981, "scorer": "재철", "assist": null, "og": true}, {"ts": "50:14", "sec": 3014, "scorer": "민기", "assist": "종근"}, {"ts": "56:43", "sec": 3403, "scorer": "영후", "assist": "원익"}, {"ts": "58:53", "sec": 3533, "scorer": "진성", "assist": "원익"}, {"ts": "1:00:07", "sec": 3607, "scorer": "용병", "assist": "진성"}, {"ts": "1:03:09", "sec": 3789, "scorer": "진성", "assist": "성현"}, {"ts": "1:04:04", "sec": 3844, "scorer": "중혁", "assist": "효종"}, {"ts": "1:07:41", "sec": 4061, "scorer": "원익", "assist": null}, {"ts": "1:08:05", "sec": 4085, "scorer": "용병", "assist": "원익"}, {"ts": "1:08:54", "sec": 4134, "scorer": "원익", "assist": "진성"}, {"ts": "1:09:56", "sec": 4196, "scorer": "원익", "assist": null}, {"ts": "1:12:32", "sec": 4352, "scorer": "종근", "assist": "민기"}, {"ts": "1:14:06", "sec": 4446, "scorer": "중혁", "assist": "종근"}, {"ts": "1:16:43", "sec": 4603, "scorer": "상훈", "assist": "민기"}, {"ts": "1:19:43", "sec": 4783, "scorer": "원익", "assist": "상훈"}, {"ts": "1:26:41", "sec": 5201, "scorer": "종근", "assist": "민기"}, {"ts": "1:27:58", "sec": 5278, "scorer": "원익", "assist": null}, {"ts": "1:29:03", "sec": 5343, "scorer": "진성", "assist": "원익"}, {"ts": "1:30:22", "sec": 5422, "scorer": "민기", "assist": "중혁"}, {"ts": "1:32:08", "sec": 5528, "scorer": "효종", "assist": "민기"}], "leaderboard": [{"name": "원익", "goals": 6, "assists": 4}, {"name": "민기", "goals": 4, "assists": 5}, {"name": "진성", "goals": 4, "assists": 4}, {"name": "중혁", "goals": 4, "assists": 2}, {"name": "종근", "goals": 4, "assists": 3}, {"name": "용병", "goals": 3, "assists": 1}, {"name": "효종", "goals": 2, "assists": 1}, {"name": "영후", "goals": 2, "assists": 0}, {"name": "성현", "goals": 0, "assists": 2}, {"name": "재철", "goals": 0, "assists": 1}, {"name": "상훈", "goals": 1, "assists": 2, "guest": true}], "total_goals": 30}, {"id": "2026-09-04", "title": "풀링 FC 9월 1주차 경기", "match_date": "2026.09.04", "upload_date": "2026.09.05", "video_id": "7jr1oRjzn8M", "teamA_name": "A팀", "teamB_name": "B팀", "teamA_roster": ["돈영", "인유", "민기", "중혁", "우진", "명빈", "준서"], "teamB_roster": ["효종", "원익", "상훈", "재철", "종근", "민솔", "용병"], "record": {"wins": 3, "draws": 2, "losses": 2, "winner": "A"}, "goals": [{"ts": "02:42", "sec": 162, "scorer": "원익", "assist": null}, {"ts": "07:24", "sec": 444, "scorer": "우진", "assist": "중혁"}, {"ts": "11:03", "sec": 663, "scorer": "상훈", "assist": "원익"}, {"ts": "14:46", "sec": 886, "scorer": "준서", "assist": "인유"}, {"ts": "18:31", "sec": 1111, "scorer": "종근", "assist": "상훈"}, {"ts": "19:03", "sec": 1143, "scorer": "중혁", "assist": "돈영"}, {"ts": "28:29", "sec": 1709, "scorer": "우진", "assist": "민기"}, {"ts": "35:01", "sec": 2101, "scorer": "인유", "assist": "민기"}, {"ts": "38:46", "sec": 2326, "scorer": "원익", "assist": null}, {"ts": "41:52", "sec": 2512, "scorer": "준서", "assist": "우진"}, {"ts": "42:36", "sec": 2556, "scorer": "재철", "assist": "효종"}, {"ts": "50:08", "sec": 3008, "scorer": "종근", "assist": null}, {"ts": "54:13", "sec": 3253, "scorer": "종근", "assist": "재철"}, {"ts": "55:51", "sec": 3351, "scorer": "중혁", "assist": null}, {"ts": "58:51", "sec": 3531, "scorer": "효종", "assist": "용병"}, {"ts": "59:21", "sec": 3561, "scorer": "중혁", "assist": "돈영"}, {"ts": "1:01:23", "sec": 3683, "scorer": "돈영", "assist": null}, {"ts": "1:02:05", "sec": 3725, "scorer": "중혁", "assist": null}, {"ts": "1:02:48", "sec": 3768, "scorer": "용병", "assist": null}, {"ts": "1:04:54", "sec": 3894, "scorer": "인유", "assist": null}, {"ts": "1:07:38", "sec": 4058, "scorer": "원익", "assist": "재철"}, {"ts": "1:09:42", "sec": 4182, "scorer": "원익", "assist": null}, {"ts": "1:12:54", "sec": 4374, "scorer": "준서", "assist": "중혁"}, {"ts": "1:16:11", "sec": 4571, "scorer": "원익", "assist": "상훈"}, {"ts": "1:18:37", "sec": 4717, "scorer": "돈영", "assist": "명빈"}, {"ts": "1:28:18", "sec": 5298, "scorer": "명빈", "assist": null}, {"ts": "1:31:18", "sec": 5478, "scorer": "효종", "assist": "종근"}, {"ts": "1:34:00", "sec": 5640, "scorer": "우진", "assist": "돈영"}, {"ts": "1:35:14", "sec": 5714, "scorer": "종근", "assist": null}, {"ts": "1:35:58", "sec": 5758, "scorer": "원익", "assist": "종근"}, {"ts": "1:39:26", "sec": 5966, "scorer": "원익", "assist": null}, {"ts": "1:44:15", "sec": 6255, "scorer": "효종", "assist": "상훈"}, {"ts": "1:47:07", "sec": 6427, "scorer": "재철", "assist": "상훈"}, {"ts": "1:47:59", "sec": 6479, "scorer": "상훈", "assist": null}], "leaderboard": [{"name": "원익", "goals": 7, "assists": 1}, {"name": "중혁", "goals": 4, "assists": 2}, {"name": "종근", "goals": 4, "assists": 2}, {"name": "우진", "goals": 3, "assists": 1}, {"name": "효종", "goals": 3, "assists": 1}, {"name": "준서", "goals": 3, "assists": 0}, {"name": "상훈", "goals": 2, "assists": 4}, {"name": "돈영", "goals": 2, "assists": 3}, {"name": "재철", "goals": 2, "assists": 2}, {"name": "인유", "goals": 2, "assists": 1}, {"name": "명빈", "goals": 1, "assists": 1}, {"name": "민기", "goals": 0, "assists": 2}, {"name": "민솔", "goals": 0, "assists": 0}, {"name": "용병 (게스트)", "goals": 1, "assists": 1, "guest": true}], "total_goals": 34}];
 
 function fmtScore(m) {
   if (!m.record) return '팀 구성 정보 등록 예정';
   const r = m.record;
   const winner = r.winner === 'A' ? m.teamA_name : (r.winner === 'B' ? m.teamB_name : '무승부');
-  return `${m.teamA_name} ${r.wins}승 ${r.draws}무 ${r.losses}패 · ${winner} 승`;
+  return `${winner} ${r.wins}승 ${r.draws}무 ${r.losses}패 · ${winner} 승`;
 }
 
 function render() {
@@ -329,7 +331,14 @@ function render() {
 
   const logUl = document.getElementById('goal-log-list');
   logUl.innerHTML = m.goals.map(g => {
-    const desc = g.assist ? `<b>${g.assist}</b> 어시스트 → <b>${g.scorer}</b> 골` : `<b>${g.scorer}</b> 단독 골`;
+    let desc;
+    if (g.og) {
+      desc = `<b>${g.scorer}</b> 자책골 (OG)`;
+    } else if (g.assist) {
+      desc = `<b>${g.assist}</b> 어시스트 → <b>${g.scorer}</b> 골`;
+    } else {
+      desc = `<b>${g.scorer}</b> 단독 골`;
+    }
     return `<li><a href="https://www.youtube.com/watch?v=${m.video_id}&t=${g.sec}s" target="_blank" rel="noopener"><span class="ts">${g.ts}</span> ${desc}</a></li>`;
   }).join('');
 
