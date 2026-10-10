@@ -300,7 +300,7 @@ const MATCHES = [{"id": "2026-10-02", "title": "풀링 FC 10월 1주차 경기",
 function fmtScore(m) {
   if (!m.record) return '팀 구성 정보 등록 예정';
   const r = m.record;
-  if (r.winner === 'D') return `${r.wins}승 ${r.draws}무 ${r.losses}패`;
+  if (r.winner === 'D') return `${r.wins}승 ${r.draws}무 ${r.losses}패 · 무승부`;
   const winner = r.winner === 'A' ? m.teamA_name : m.teamB_name;
   return `${winner} ${r.wins}승 ${r.draws}무 ${r.losses}패 · ${winner} 승`;
 }
